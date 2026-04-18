@@ -12,11 +12,11 @@ End-to-end analysis of customer retention at **Olist**, a Brazilian e-commerce m
 
 **Page 1 — The Retention Problem**
 
-![Dashboard Page 1](reports/dashboard_page1.png)
+![c:\Users\akshitha\Desktop\olist-retention-analysis\dashboard\dashboard_page1.png](reports/dashboard_page1.png)
 
 **Page 2 — The Drivers**
 
-![Dashboard Page 2](reports/dashboard_page2.png)
+![c:\Users\akshitha\Desktop\olist-retention-analysis\dashboard\dashboard_page2.png](reports/dashboard_page2.png)
 
 ---
 
@@ -26,13 +26,23 @@ End-to-end analysis of customer retention at **Olist**, a Brazilian e-commerce m
 
 **2. The retention "cliff" is nearly vertical.** Across every monthly cohort from 2017-2018, retention drops from 100% in month 0 to ~0.48% in month 1 — then stays flat. Customers aren't churning slowly; they're vanishing after the first purchase.
 
-**3. Two common retention levers don't work at Olist.**
+![c:\Users\akshitha\Desktop\olist-retention-analysis\reports\cohort_retention_heatmap.png](reports/cohort_retention_heatmap.png)
+
+**3. The revenue-loyalty mismatch is stark.** "Lost High-Value" customers — one-time big spenders who never returned — are Olist's #1 revenue segment at R$ 3.8M (28.7% of total). The 122 "Champions" (highest-frequency, highest-value customers) contribute only 0.4% of revenue. Olist's revenue depends on customers it isn't retaining.
+
+![c:\Users\akshitha\Desktop\olist-retention-analysis\reports\rfm_segments.png](reports/rfm_segments.png)
+
+**4. Two common retention levers don't work at Olist.**
 - Delivery speed: repeat and one-time customers had statistically identical median delivery times (~10 days). Faster shipping would not move retention.
 - Review score: 5-star reviewers repeat at 3.08%, 1-star reviewers repeat at 2.72%. A 0.36 percentage point difference is not a lever.
 
-**4. Product category is the strongest signal.** Home appliances retain at 8.74% (5.3x higher than electronics at 1.66%). Counterintuitively, "durable" home categories produce more repeat customers than "gadget" categories — suggesting Olist's stickiness comes from home-goods browsing behavior, not electronics price-comparison shopping.
+**5. Product category is the strongest signal.** Home appliances retain at 8.74% (5.3x higher than electronics at 1.66%). Counterintuitively, "durable" home categories produce more repeat customers than "gadget" categories.
 
-**5. First-order value is *inversely* correlated with retention.** Customers spending under R$ 35 on their first order repeat at 3.38%; customers spending over R$ 159 repeat at 2.64%. Bigger first purchases ≠ better customers. This contradicts standard e-commerce assumptions.
+![c:\Users\akshitha\Desktop\olist-retention-analysis\reports\h1_product_category.png](reports/h1_product_category.png)
+
+**6. First-order value is *inversely* correlated with retention.** Customers spending under R$ 35 on their first order repeat at 3.38%; customers spending over R$ 159 repeat at 2.64%. Bigger first purchases ≠ better customers. This contradicts standard e-commerce assumptions.
+
+![c:\Users\akshitha\Desktop\olist-retention-analysis\reports\h4_first_order_value.png](reports/h4_first_order_value.png)
 
 ---
 
@@ -44,24 +54,6 @@ End-to-end analysis of customer retention at **Olist**, a Brazilian e-commerce m
 4. **Rebalance category acquisition toward home goods.** Home appliances, furniture, bed/bath, and sports/leisure all out-retain the platform average.
 5. **Fix Olist's `customer_id` infrastructure.** The system generates a new ID per order, which means the business cannot identify its own loyal customers. The most loyal customer (17 orders) currently appears as 17 different people in the database.
 
----
-
-## Project structure
-olist-retention-analysis/
-├── data/
-│   ├── raw/                # Original Kaggle CSVs (not in repo — see data source below)
-│   └── processed/          # Cleaned and enriched data
-├── notebooks/
-│   ├── 01_data_exploration.ipynb      # Schema mapping, data quality checks
-│   ├── 02_cohort_analysis.ipynb       # Cohort retention + RFM segmentation
-│   └── 03_retention_drivers.ipynb     # 4-hypothesis driver analysis
-├── sql/
-│   ├── schema.sql                     # CREATE TABLE statements for all 9 tables
-│   └── analysis_queries.sql           # 4 portable SQL queries reproducing key findings
-├── dashboard/
-│   └── olist_retention_dashboard.pbix # Power BI dashboard (2 pages)
-├── reports/                           # Exported charts and dashboard screenshots
-└── README.md
 ---
 
 ## Tech stack
