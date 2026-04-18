@@ -1,0 +1,20 @@
+# Raw data (too big for GitHub)
+data/raw/
+data/processed/*.csv
+data/processed/*.parquet
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Power BI
+*.pbix.bak
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
