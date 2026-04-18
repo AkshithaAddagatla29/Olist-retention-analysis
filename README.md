@@ -12,11 +12,11 @@ End-to-end analysis of customer retention at **Olist**, a Brazilian e-commerce m
 
 **Page 1 — The Retention Problem**
 
-![c:\Users\akshitha\Desktop\olist-retention-analysis\dashboard\dashboard_page1.png](reports/dashboard_page1.png)
+![c:\Users\akshitha\Desktop\olist-retention-analysis\reports\dashboard_page1.png](reports/dashboard_page1.png)
 
 **Page 2 — The Drivers**
 
-![c:\Users\akshitha\Desktop\olist-retention-analysis\dashboard\dashboard_page2.png](reports/dashboard_page2.png)
+![c:\Users\akshitha\Desktop\olist-retention-analysis\reports\dashboard_page2.png](reports/dashboard_page2.png)
 
 ---
 
